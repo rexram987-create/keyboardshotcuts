@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך קיצורי מקלדת 2025 - Desktop Optimized</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Keyboard Key Styling */
+        .kbd {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.7rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            font-size: 0.9rem;
+            background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+            border: 1px solid #475569;
+            border-radius: 6px;
+            box-shadow: 0 4px 0 #020617;
+            margin: 0 2px;
+            min-width: 2.8rem;
+            color: #38bdf8;
+            transition: all 0.1s;
+        }
+
+        /* Desktop Force Table View */
+        @media (min-width: 481px) {
+            .shortcuts-table {
+                display: table !important;
+                width: 100%;
+                border-spacing: 0 10px;
+                border-collapse: separate;
+            }
+            .shortcuts-table thead {
+                display: table-header-group !important;
+            }
+            .shortcuts-table tr {
+                display: table-row !important;
+                background: rgba(30, 41, 59, 0.4);
+            }
+            .shortcuts-table td {
+                display: table-cell !important;
+                padding: 1.25rem 1.5rem;
+                vertical-align: middle;
+                border-top: 1px solid #334155;
+                border-bottom: 1px solid #334155;
+            }
+            .shortcuts-table td:first-child {
+                border-right: 1px solid #334155;
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+            .shortcuts-table td:last-child {
+                border-left: 1px solid #334155;
+                border-top-left-radius: 12px;
+                border-bottom-left-radius: 12px;
+            }
+            .mobile-label { display: none !important; }
+        }
+
+        /* Mobile View ONLY */
+        @media (max-width: 480px) {
+            .shortcuts-table, .shortcuts-table thead, .shortcuts-table tbody, .shortcuts-table th, .shortcuts-table td, .shortcuts-table tr {
+                display: block;
+            }
+            .shortcuts-table thead { display: none; }
+            .shortcuts-table tr {
+                margin-bottom: 1.5rem;
+                border-radius: 16px;
+                border: 1px solid #334155;
+                padding: 1rem;
+                background: #1e293b;
+            }
+            .shortcuts-table td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem 0 !important;
+            }
+            .mobile-label {
+                font-weight: bold;
+                color: #64748b;
+                font-size: 0.8rem;
+            }
+        }
+
+        .category-btn.active {
+            background-color: #38bdf8;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+            <div class="text-right">
+                <h1 class="text-4xl md:text-5xl font-black text-white">קיצורי דרך <span class="text-sky-500">במקלדת</span></h1>
+                <p class="text-slate-400 mt-2">מדריך ויזואלי מאומת עבור יעל המדענית 🧬</p>
+            </div>
+            <div class="hidden md:block">
+                <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700 text-xs text-slate-500">
+                    <p>🖥️ מצב תצוגה: <b>דסקטופ מאולץ</b></p>
+                    <p>📱 מותאם ל: <b>Samsung S25 Ultra</b></p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+            <div class="relative flex-1">
+                <input type="text" id="searchInput" placeholder="חפש פעולה..." 
+                       class="w-full bg-slate-800 border border-slate-700 text-white pr-12 pl-4 py-3 rounded-xl focus:ring-2 focus:ring-sky-500 outline-none">
+                <span class="absolute right-4 top-3.5 text-slate-500">🔍</span>
+            </div>
+            <div class="flex flex-wrap gap-2" id="filters">
+                <button onclick="filter('all')" class="category-btn active px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">הכל</button>
+                <button onclick="filter('nav')" class="category-btn px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">ניווט</button>
+                <button onclick="filter('system')" class="category-btn px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">Windows</button>
+                <button onclick="filter('browser')" class="category-btn px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">דפדפן</button>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="w-full overflow-hidden">
+            <table class="shortcuts-table">
+                <thead class="bg-slate-800">
+                    <tr>
+                        <th class="px-6 py-4 text-right">פעולה</th>
+                        <th class="px-6 py-4 text-right">שילוב מקשים</th>
+                        <th class="px-6 py-4 text-center hidden md:table-cell">קטגוריה</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <!-- Loaded via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            { icon: "🔝", action: "קפיצה לראש הדף", keys: ["Home"], cat: "nav", catName: "ניווט" },
+            { icon: "🔚", action: "קפיצה לסוף הדף", keys: ["End"], cat: "nav", catName: "ניווט" },
+            { icon: "📄", action: "ראש המסמך (וודאי)", keys: ["Ctrl", "Home"], cat: "nav", catName: "ניווט" },
+            { icon: "📝", action: "סוף המסמך (וודאי)", keys: ["Ctrl", "End"], cat: "nav", catName: "ניווט" },
+            { icon: "📋", action: "העתקה (Copy)", keys: ["Ctrl", "C"], cat: "edit", catName: "עריכה" },
+            { icon: "📥", action: "הדבקה (Paste)", keys: ["Ctrl", "V"], cat: "edit", catName: "עריכה" },
+            { icon: "⏪", action: "ביטול פעולה (Undo)", keys: ["Ctrl", "Z"], cat: "edit", catName: "עריכה" },
+            { icon: "🗂️", action: "היסטוריית העתקות", keys: ["Win", "V"], cat: "system", catName: "Windows" },
+            { icon: "🔀", action: "מעבר בין חלונות", keys: ["Alt", "Tab"], cat: "system", catName: "Windows" },
+            { icon: "🔒", action: "נעילת המחשב", keys: ["Win", "L"], cat: "system", catName: "Windows" },
+            { icon: "📸", action: "צילום מסך חלקי", keys: ["Win", "Shift", "S"], cat: "system", catName: "Windows" },
+            { icon: "📁", action: "סייר הקבצים", keys: ["Win", "E"], cat: "system", catName: "Windows" },
+            { icon: "🌐", action: "לשונית חדשה", keys: ["Ctrl", "T"], cat: "browser", catName: "דפדפן" },
+            { icon: "♻️", action: "שחזור לשונית", keys: ["Ctrl", "Shift", "T"], cat: "browser", catName: "דפדפן" },
+            { icon: "🔍", action: "חיפוש בדף", keys: ["Ctrl", "F"], cat: "browser", catName: "דפדפן" }
+        ];
+
+        function render(f = 'all', t = '') {
+            const list = document.getElementById('list');
+            list.innerHTML = '';
+            data.filter(s => (f==='all' || s.cat===f) && s.action.includes(t)).forEach(s => {
+                const tr = document.createElement('tr');
+                const keysHtml = s.keys.map(k => `<span class="kbd">${k}</span>`).join(' + ');
+                tr.innerHTML = `
+                    <td>
+                        <span class="mobile-label">פעולה:</span>
+                        <span class="flex items-center gap-2 text-lg font-bold"><span>${s.icon}</span> ${s.action}</span>
+                    </td>
+                    <td>
+                        <span class="mobile-label">מקשים:</span>
+                        <div class="flex items-center gap-1">${keysHtml}</div>
+                    </td>
+                    <td class="text-center hidden md:table-cell">
+                        <span class="bg-sky-500/10 text-sky-400 border border-sky-400/20 px-3 py-1 rounded-full text-[10px] font-black uppercase">${s.catName}</span>
+                    </td>
+                `;
+                list.appendChild(tr);
+            });
+        }
+
+        function filter(c) {
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            render(c, document.getElementById('searchInput').value);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', e => {
+            const active = document.querySelector('.category-btn.active').getAttribute('onclick').match(/'([^']+)'/)[1];
+            render(active, e.target.value);
+        });
+
+        render();
+    </script>
+</body>
+</html>
