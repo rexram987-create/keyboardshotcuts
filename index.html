@@ -3,54 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מדריך קיצורי מקלדת 2025 - Desktop Optimized</title>
+    <title>מדריך קיצורי מקלדת 2025 - הגרסה המלאה</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Assistant', sans-serif;
-            background-color: #0f172a;
+            background-color: #020617; 
             color: #f1f5f9;
-            margin: 0;
-            padding: 0;
         }
-
-        /* Keyboard Key Styling */
+        
+        /* עיצוב המקשים */
         .kbd {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.35rem 0.7rem;
-            font-family: 'Courier New', Courier, monospace;
+            padding: 0.4rem 0.8rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
             font-weight: 800;
-            font-size: 0.9rem;
-            background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
-            border: 1px solid #475569;
-            border-radius: 6px;
-            box-shadow: 0 4px 0 #020617;
+            font-size: 0.85rem;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            box-shadow: 0 4px 0 #000000;
             margin: 0 2px;
-            min-width: 2.8rem;
+            min-width: 3rem;
             color: #38bdf8;
-            transition: all 0.1s;
+            text-transform: uppercase;
         }
 
-        /* Desktop Force Table View */
-        @media (min-width: 481px) {
+        /* עיצוב הלשוניות */
+        .tab-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #1e293b;
+        }
+        
+        .tab-btn.active {
+            background-color: #38bdf8 !important;
+            color: #020617 !important;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+
+        /* עיצוב הטבלה */
+        @media (min-width: 768px) {
             .shortcuts-table {
-                display: table !important;
+                display: table;
                 width: 100%;
                 border-spacing: 0 10px;
                 border-collapse: separate;
             }
-            .shortcuts-table thead {
-                display: table-header-group !important;
-            }
             .shortcuts-table tr {
-                display: table-row !important;
                 background: rgba(30, 41, 59, 0.4);
             }
             .shortcuts-table td {
-                display: table-cell !important;
                 padding: 1.25rem 1.5rem;
                 vertical-align: middle;
                 border-top: 1px solid #334155;
@@ -66,144 +73,207 @@
                 border-top-left-radius: 12px;
                 border-bottom-left-radius: 12px;
             }
-            .mobile-label { display: none !important; }
         }
 
-        /* Mobile View ONLY */
-        @media (max-width: 480px) {
-            .shortcuts-table, .shortcuts-table thead, .shortcuts-table tbody, .shortcuts-table th, .shortcuts-table td, .shortcuts-table tr {
+        @media (max-width: 767px) {
+            .shortcuts-table, .shortcuts-table tbody, .shortcuts-table tr, .shortcuts-table td {
                 display: block;
             }
-            .shortcuts-table thead { display: none; }
             .shortcuts-table tr {
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
                 border-radius: 16px;
                 border: 1px solid #334155;
                 padding: 1rem;
                 background: #1e293b;
             }
-            .shortcuts-table td {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.75rem 0 !important;
-            }
             .mobile-label {
-                font-weight: bold;
+                display: block;
+                font-weight: 700;
                 color: #64748b;
-                font-size: 0.8rem;
+                font-size: 0.7rem;
+                margin-bottom: 0.2rem;
             }
         }
 
-        .category-btn.active {
-            background-color: #38bdf8;
-            color: #0f172a;
-        }
+        .hidden { display: none; }
     </style>
 </head>
 <body class="p-4 md:p-12">
 
     <div class="max-w-6xl mx-auto">
-        <!-- Header -->
-        <header class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
-            <div class="text-right">
-                <h1 class="text-4xl md:text-5xl font-black text-white">קיצורי דרך <span class="text-sky-500">במקלדת</span></h1>
-                <p class="text-slate-400 mt-2">מדריך ויזואלי מאומת עבור יעל המדענית 🧬</p>
+        <!-- כותרת -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-10 border-b border-slate-800 pb-8 gap-6 text-center md:text-right">
+            <div>
+                <h1 class="text-4xl md:text-6xl font-black text-white italic">המקלדת <span class="text-sky-500">המלאה</span></h1>
+                <p class="text-slate-400 text-lg mt-2 font-light">כל קיצורי הדרך, כולל הגדלה וריענון, מופרדים לפי קטגוריות. עבור יעל המדענית 🧬</p>
             </div>
-            <div class="hidden md:block">
-                <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700 text-xs text-slate-500">
-                    <p>🖥️ מצב תצוגה: <b>דסקטופ מאולץ</b></p>
-                    <p>📱 מותאם ל: <b>Samsung S25 Ultra</b></p>
-                </div>
+            <div class="bg-slate-900/50 px-6 py-4 rounded-2xl border border-slate-800 text-sm">
+                <p class="text-slate-300 font-bold tracking-wide uppercase">Samsung S25 Ultra Ready 📱</p>
             </div>
         </header>
 
-        <!-- Filters -->
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
-            <div class="relative flex-1">
-                <input type="text" id="searchInput" placeholder="חפש פעולה..." 
-                       class="w-full bg-slate-800 border border-slate-700 text-white pr-12 pl-4 py-3 rounded-xl focus:ring-2 focus:ring-sky-500 outline-none">
-                <span class="absolute right-4 top-3.5 text-slate-500">🔍</span>
+        <!-- תפריט לשוניות -->
+        <nav class="flex flex-wrap justify-center md:justify-start gap-2 mb-8" id="tabMenu">
+            <button onclick="showTab('chrome')" class="tab-btn active px-6 py-3 rounded-xl bg-slate-900 font-bold text-sm">🌐 Google Chrome</button>
+            <button onclick="showTab('edge')" class="tab-btn px-6 py-3 rounded-xl bg-slate-900 font-bold text-sm">💙 Microsoft Edge</button>
+            <button onclick="showTab('system')" class="tab-btn px-6 py-3 rounded-xl bg-slate-900 font-bold text-sm">🖥️ Windows & צילום מסך</button>
+            <button onclick="showTab('nav')" class="tab-btn px-6 py-3 rounded-xl bg-slate-900 font-bold text-sm">📑 עריכה וסימון טקסט</button>
+        </nav>
+
+        <!-- חיפוש -->
+        <div class="relative mb-8">
+            <input type="text" id="searchInput" placeholder="חפש כל קיצור דרך..." 
+                   class="w-full bg-slate-900 border-2 border-slate-800 text-white pr-12 pl-4 py-4 rounded-2xl focus:border-sky-500 outline-none transition-all">
+            <span class="absolute right-4 top-4 text-xl">🔍</span>
+        </div>
+
+        <!-- תוכן -->
+        <div id="tabContent">
+            <!-- CHROME -->
+            <div id="chrome" class="tab-pane">
+                <div class="bg-slate-900/30 p-6 rounded-3xl border border-slate-800 mb-6">
+                    <h2 class="text-2xl font-black text-sky-400 mb-2">Google Chrome</h2>
+                    <p class="text-slate-500 text-sm italic">ניהול גלישה, שיתוף, ריענון וזום</p>
+                </div>
+                <table class="shortcuts-table"><tbody id="list-chrome"></tbody></table>
             </div>
-            <div class="flex flex-wrap gap-2" id="filters">
-                <button onclick="filter('all')" class="category-btn active px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">הכל</button>
-                <button onclick="filter('nav')" class="category-btn px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">ניווט</button>
-                <button onclick="filter('system')" class="category-btn px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">Windows</button>
-                <button onclick="filter('browser')" class="category-btn px-4 py-2 rounded-lg border border-slate-700 font-bold text-sm">דפדפן</button>
+
+            <!-- EDGE -->
+            <div id="edge" class="tab-pane hidden">
+                <div class="bg-slate-900/30 p-6 rounded-3xl border border-slate-800 mb-6">
+                    <h2 class="text-2xl font-black text-sky-500 mb-2">Microsoft Edge</h2>
+                    <p class="text-slate-500 text-sm italic">יכולות מתקדמות לצילום דפים, קריאה וריענון</p>
+                </div>
+                <table class="shortcuts-table"><tbody id="list-edge"></tbody></table>
+            </div>
+
+            <!-- SYSTEM -->
+            <div id="system" class="tab-pane hidden">
+                <div class="bg-slate-900/30 p-6 rounded-3xl border border-slate-800 mb-6">
+                    <h2 class="text-2xl font-black text-slate-300 mb-2">מערכת Windows & צילומי מסך</h2>
+                    <p class="text-slate-500 text-sm italic">כל הדרכים לצלם את המסך ולנהל את המחשב</p>
+                </div>
+                <table class="shortcuts-table"><tbody id="list-system"></tbody></table>
+            </div>
+
+            <!-- NAV -->
+            <div id="nav" class="tab-pane hidden">
+                <div class="bg-slate-900/30 p-6 rounded-3xl border border-slate-800 mb-6">
+                    <h2 class="text-2xl font-black text-slate-400 mb-2">עריכה וסימון טקסט</h2>
+                    <p class="text-slate-500 text-sm italic">שליטה מלאה בסימון, העתקה ועיצוב טקסט במהירות</p>
+                </div>
+                <table class="shortcuts-table"><tbody id="list-nav"></tbody></table>
             </div>
         </div>
 
-        <!-- Table -->
-        <div class="w-full overflow-hidden">
-            <table class="shortcuts-table">
-                <thead class="bg-slate-800">
-                    <tr>
-                        <th class="px-6 py-4 text-right">פעולה</th>
-                        <th class="px-6 py-4 text-right">שילוב מקשים</th>
-                        <th class="px-6 py-4 text-center hidden md:table-cell">קטגוריה</th>
-                    </tr>
-                </thead>
-                <tbody id="list">
-                    <!-- Loaded via JS -->
-                </tbody>
-            </table>
-        </div>
+        <!-- פוטר -->
+        <footer class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 p-10 bg-slate-900/40 rounded-3xl border border-slate-800 items-center">
+            <div class="text-right">
+                <h4 class="text-white font-bold mb-4 italic text-lg border-b border-sky-900 pb-2 inline-block">מקורות הידע המאומתים</h4>
+                <ul class="space-y-2 text-sm text-slate-400">
+                    <li>🔹 <a href="https://support.google.com/chrome" target="_blank" class="hover:text-sky-400">Google Chrome Help - Shortcuts & Zoom</a></li>
+                    <li>🔹 <a href="https://support.microsoft.com" target="_blank" class="hover:text-sky-400">Microsoft Support - Windows Screenshot & Refresh</a></li>
+                    <li>🔹 <a href="https://www.samsung.com" target="_blank" class="hover:text-sky-400">Samsung Galaxy S25 Ultra Sync</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col items-center md:items-end">
+                <p class="text-4xl mb-2">🧬</p>
+                <p class="text-white font-black text-xl tracking-wider">YAEL SCIENTIST EDITION</p>
+                <p class="text-slate-600 text-xs mt-1">Version 3.1 • December 2025</p>
+            </div>
+        </footer>
     </div>
 
     <script>
-        const data = [
-            { icon: "🔝", action: "קפיצה לראש הדף", keys: ["Home"], cat: "nav", catName: "ניווט" },
-            { icon: "🔚", action: "קפיצה לסוף הדף", keys: ["End"], cat: "nav", catName: "ניווט" },
-            { icon: "📄", action: "ראש המסמך (וודאי)", keys: ["Ctrl", "Home"], cat: "nav", catName: "ניווט" },
-            { icon: "📝", action: "סוף המסמך (וודאי)", keys: ["Ctrl", "End"], cat: "nav", catName: "ניווט" },
-            { icon: "📋", action: "העתקה (Copy)", keys: ["Ctrl", "C"], cat: "edit", catName: "עריכה" },
-            { icon: "📥", action: "הדבקה (Paste)", keys: ["Ctrl", "V"], cat: "edit", catName: "עריכה" },
-            { icon: "⏪", action: "ביטול פעולה (Undo)", keys: ["Ctrl", "Z"], cat: "edit", catName: "עריכה" },
-            { icon: "🗂️", action: "היסטוריית העתקות", keys: ["Win", "V"], cat: "system", catName: "Windows" },
-            { icon: "🔀", action: "מעבר בין חלונות", keys: ["Alt", "Tab"], cat: "system", catName: "Windows" },
-            { icon: "🔒", action: "נעילת המחשב", keys: ["Win", "L"], cat: "system", catName: "Windows" },
-            { icon: "📸", action: "צילום מסך חלקי", keys: ["Win", "Shift", "S"], cat: "system", catName: "Windows" },
-            { icon: "📁", action: "סייר הקבצים", keys: ["Win", "E"], cat: "system", catName: "Windows" },
-            { icon: "🌐", action: "לשונית חדשה", keys: ["Ctrl", "T"], cat: "browser", catName: "דפדפן" },
-            { icon: "♻️", action: "שחזור לשונית", keys: ["Ctrl", "Shift", "T"], cat: "browser", catName: "דפדפן" },
-            { icon: "🔍", action: "חיפוש בדף", keys: ["Ctrl", "F"], cat: "browser", catName: "דפדפן" }
+        const shortcuts = [
+            // CHROME
+            { cat: "chrome", icon: "🔄", action: "ריענון הדף", keys: ["F5", "/", "Ctrl", "R"], desc: "טוען מחדש את הדף הנוכחי מהשרת." },
+            { cat: "chrome", icon: "➕", action: "הגדלת טקסט (Zoom In)", keys: ["Ctrl", "+"], desc: "מגדיל את התצוגה של האתר לנוחות קריאה." },
+            { cat: "chrome", icon: "➖", action: "הקטנת טקסט (Zoom Out)", keys: ["Ctrl", "-"], desc: "מקטין את תצוגת האתר." },
+            { cat: "chrome", icon: "🎯", action: "איפוס זום", keys: ["Ctrl", "0"], desc: "מחזיר את התצוגה לגודל המקורי (100%)." },
+            { cat: "chrome", icon: "🔗", action: "שיתוף מערכתי (Windows Share)", keys: ["תפריט ⋮", "שמירה ושיתוף", "שיתוף"], desc: "בכרום 2025: לחץ על 3 הנקודות -> שמירה ושיתוף -> שיתוף. שם נמצא כפתור ה-'More'." },
+            { cat: "chrome", icon: "📲", action: "שלח ל-Samsung S25 Ultra", keys: ["קליק ימני", "שלח ל..."], desc: "מעביר את הדף מיד כהתראה לטלפון שלך." },
+            { cat: "chrome", icon: "🔳", action: "יצירת קוד QR", keys: ["תפריט שיתוף", "קוד QR"], desc: "לסריקה מהירה מהמסך עם המצלמה." },
+            { cat: "chrome", icon: "♻️", action: "שחזור לשונית שנסגרה", keys: ["Ctrl", "Shift", "T"], desc: "מציל אותך אם סגרת בטעות כתבה מעניינת." },
+            
+            // EDGE
+            { cat: "edge", icon: "🔄", action: "ריענון הדף", keys: ["F5", "/", "Ctrl", "R"], desc: "רענון הדף ב-Edge." },
+            { cat: "edge", icon: "➕", action: "הגדלת טקסט", keys: ["Ctrl", "+"], desc: "הגדלת תצוגה." },
+            { cat: "edge", icon: "📤", action: "שיתוף ישיר מהיר", keys: ["Alt", "F", "S"], desc: "פתיחה מיידית של תפריט השיתוף של ווינדוס." },
+            { cat: "edge", icon: "📸", action: "צילום דף אינטרנט מלא", keys: ["Ctrl", "Shift", "S"], desc: "צילום כל הכתבה מלמעלה עד למטה כתמונה אחת." },
+            { cat: "edge", icon: "🎙️", action: "קריאה בקול רם", keys: ["Ctrl", "Shift", "U"], desc: "הדפדפן מקריא את הטקסט עבורך." },
+            
+            // SYSTEM
+            { cat: "system", icon: "🖥️", action: "צילום מסך מלא (רגיל)", keys: ["PrtSc"], desc: "מצלם את כל המסך ושומר אותו בלוח (Clipboard)." },
+            { cat: "system", icon: "💾", action: "צילום ושמירה אוטומטית", keys: ["Win", "PrtSc"], desc: "מצלם את כל המסך ושומר אותו כקובץ בתיקיית 'צילומי מסך'." },
+            { cat: "system", icon: "📸", action: "צילום מסך חלקי (מתקדם)", keys: ["Win", "Shift", "S"], desc: "פתיחת כלי החיתוך לבחירת אזור ספציפי במסך." },
+            { cat: "system", icon: "🕰️", action: "היסטוריית העתקות", keys: ["Win", "V"], desc: "צפייה בכל מה שהעתקת (טקסט ותמונות) לאחרונה." },
+            { cat: "system", icon: "🔒", action: "נעילה מהירה", keys: ["Win", "L"], desc: "שמירה על פרטיות בשנייה אחת." },
+            { cat: "system", icon: "⌨️", action: "הקלדה קולית", keys: ["Win", "H"], desc: "דיבור למחשב במקום הקלדה." },
+            
+            // NAV & EDIT
+            { cat: "nav", icon: "✅", action: "סימון כל הטקסט", keys: ["Ctrl", "A"], desc: "מסמן את כל התוכן במסמך או בדף האינטרנט." },
+            { cat: "nav", icon: "➕", action: "הגדלת טקסט (במסמכים)", keys: ["Ctrl", "+"], desc: "הגדלת תצוגה במסמכים." },
+            { cat: "nav", icon: "✒️", action: "העתקה", keys: ["Ctrl", "C"], desc: "העתקת המידע המסומן ללוח." },
+            { cat: "nav", icon: "📥", action: "הדבקה", keys: ["Ctrl", "V"], desc: "הדבקת המידע האחרון שהועתק." },
+            { cat: "nav", icon: "⏪", action: "ביטול פעולה (Undo)", keys: ["Ctrl", "Z"], desc: "חזרה צעד אחד אחורה אם טעית." },
+            { cat: "nav", icon: "🔝", action: "קפיצה לראש הדף", keys: ["Home"], desc: "חזרה מיידית לתחילה." },
+            { cat: "nav", icon: "🔚", action: "קפיצה לסוף הדף", keys: ["End"], desc: "ירידה מיידית לסוף." }
         ];
 
-        function render(f = 'all', t = '') {
-            const list = document.getElementById('list');
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            document.getElementById('searchInput').value = '';
+            render(tabId, '');
+        }
+
+        function render(activeTab, term = '') {
+            const list = document.getElementById(`list-${activeTab}`);
             list.innerHTML = '';
-            data.filter(s => (f==='all' || s.cat===f) && s.action.includes(t)).forEach(s => {
+            
+            const filtered = shortcuts.filter(s => s.cat === activeTab && (s.action.includes(term) || s.desc.includes(term)));
+            
+            filtered.forEach(s => {
                 const tr = document.createElement('tr');
-                const keysHtml = s.keys.map(k => `<span class="kbd">${k}</span>`).join(' + ');
+                const keysHtml = s.keys.map(k => k === "/" ? `<span class="text-slate-600 mx-1">/</span>` : `<span class="kbd">${k}</span>`).join('');
+                
                 tr.innerHTML = `
-                    <td>
-                        <span class="mobile-label">פעולה:</span>
-                        <span class="flex items-center gap-2 text-lg font-bold"><span>${s.icon}</span> ${s.action}</span>
+                    <td style="width: 30%">
+                        <span class="mobile-label">פעולה</span>
+                        <div class="flex items-center gap-4 text-white">
+                            <span class="text-3xl">${s.icon}</span>
+                            <span class="text-xl font-bold">${s.action}</span>
+                        </div>
                     </td>
-                    <td>
-                        <span class="mobile-label">מקשים:</span>
-                        <div class="flex items-center gap-1">${keysHtml}</div>
+                    <td style="width: 30%">
+                        <span class="mobile-label">ביצוע</span>
+                        <div class="flex items-center gap-1 justify-end md:justify-start flex-wrap">${keysHtml}</div>
                     </td>
-                    <td class="text-center hidden md:table-cell">
-                        <span class="bg-sky-500/10 text-sky-400 border border-sky-400/20 px-3 py-1 rounded-full text-[10px] font-black uppercase">${s.catName}</span>
+                    <td class="hidden md:table-cell" style="width: 40%">
+                        <span class="mobile-label">הסבר מפורט</span>
+                        <p class="text-slate-400 text-sm leading-relaxed">${s.desc}</p>
                     </td>
                 `;
                 list.appendChild(tr);
             });
-        }
-
-        function filter(c) {
-            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-            render(c, document.getElementById('searchInput').value);
+            
+            if (filtered.length === 0) {
+                list.innerHTML = `<tr><td colspan="3" class="text-center py-20 text-slate-500 font-bold">לא נמצאו תוצאות... 🧪</td></tr>`;
+            }
         }
 
         document.getElementById('searchInput').addEventListener('input', e => {
-            const active = document.querySelector('.category-btn.active').getAttribute('onclick').match(/'([^']+)'/)[1];
-            render(active, e.target.value);
+            const activeTab = document.querySelector('.tab-btn.active').getAttribute('onclick').match(/'([^']+)'/)[1];
+            render(activeTab, e.target.value);
         });
 
-        render();
+        // Start with Chrome
+        render('chrome', '');
     </script>
 </body>
 </html>
