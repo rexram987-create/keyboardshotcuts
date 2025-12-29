@@ -1,35 +1,206 @@
-### קיצורי דרך לשיתוף מהיר (Windows & Browsers)
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך קיצורי מקלדת 2025 - גרסה מאומתת</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #020617; 
+            color: #f1f5f9;
+        }
+        
+        .kbd {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.4rem 0.8rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-weight: 800;
+            font-size: 0.9rem;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            box-shadow: 0 4px 0 #000000;
+            margin: 0 3px;
+            min-width: 3.2rem;
+            color: #38bdf8;
+            text-transform: uppercase;
+        }
 
-| פעולה | קיצור דרך | הסבר | 
- | ----- | ----- | ----- | 
-| **שיתוף כתובת הדף (URL)** | `Ctrl` + `L` ואז `Ctrl` + `C` | מסמן את שורת הכתובת ומעתיק אותה מיד לשליחה בכל מקום. | 
-| **שיתוף צילום מסך מהיר** | `Win` + `Shift` + `S` | מצלם חלק מהמסך ושומר אותו בלוח (Clipboard) להדבקה מהירה בצ'אט. | 
-| **תפריט שיתוף בדפדפן Edge** | `Alt` + `F` ולאחר מכן `S` | פותח את תפריט השיתוף המובנה של דפדפן אדג'. | 
-| **שיתוף למסך חיצוני (Cast)** | `Win` + `K` | שיתוף והקרנה של המסך למכשירים אלחוטיים או טלוויזיות בסביבה. | 
-| **פתיחת "היסטוריית העתקות"** | `Win` + `V` | מאפשר לראות את כל הדברים האחרונים שהעתקת (טקסטים ותמונות) כדי לשתף אותם שוב. | 
-| **שליחת הדף בדוא"ל (בחלק מהדפדפנים)** | `Ctrl` + `Shift` + `I` | פותח את אפליקציית המייל עם הקישור לדף הנוכחי. | 
+        @media (min-width: 601px) {
+            .shortcuts-table {
+                display: table !important;
+                width: 100%;
+                border-spacing: 0 12px;
+                border-collapse: separate;
+            }
+            .shortcuts-table thead {
+                display: table-header-group !important;
+            }
+            .shortcuts-table tr {
+                display: table-row !important;
+                background: rgba(30, 41, 59, 0.4);
+                transition: all 0.3s ease;
+            }
+            .shortcuts-table tr:hover {
+                background: rgba(56, 189, 248, 0.1);
+            }
+            .shortcuts-table td {
+                display: table-cell !important;
+                padding: 1.5rem;
+                vertical-align: middle;
+                border-top: 1px solid #334155;
+                border-bottom: 1px solid #334155;
+            }
+            .shortcuts-table td:first-child {
+                border-right: 1px solid #334155;
+                border-top-right-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+            .shortcuts-table td:last-child {
+                border-left: 1px solid #334155;
+                border-top-left-radius: 16px;
+                border-bottom-left-radius: 16px;
+            }
+            .mobile-label { display: none; }
+        }
 
-### שיתוף ב-Google Chrome (ללא קיצור ישיר)
+        @media (max-width: 600px) {
+            .shortcuts-table, .shortcuts-table thead, .shortcuts-table tbody, .shortcuts-table tr, .shortcuts-table td {
+                display: block;
+            }
+            .shortcuts-table thead { display: none; }
+            .shortcuts-table tr {
+                margin-bottom: 2rem;
+                border-radius: 20px;
+                border: 1px solid #334155;
+                padding: 1.5rem;
+                background: #1e293b;
+            }
+            .shortcuts-table td {
+                padding: 0.75rem 0;
+            }
+            .mobile-label {
+                display: block;
+                font-weight: 700;
+                color: #64748b;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                margin-bottom: 0.5rem;
+            }
+        }
 
-בכרום אין קיצור מקלדת בודד לשיתוף, אך ניתן להשתמש בשיטות הבאות:
+        .active-filter {
+            background-color: #38bdf8 !important;
+            color: #020617 !important;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-16">
 
-| פעולה | דרך ביצוע | למה זה טוב? | 
- | ----- | ----- | ----- | 
-| **תפריט שיתוף (HUB)** | לחיצה על אייקון ה-**Share** (חץ קטן) בצד ימין של שורת הכתובת | מאפשר יצירת קוד QR, העתקת קישור או שליחה למכשירים אחרים (כמו ה-S25 Ultra שלך). | 
-| **שליחה למכשירים שלי** | לחיצה ימנית על הדף > **Send to your devices** | שולח את הקישור ישירות לטלפון ה-Samsung שלך כהתראה. | 
-| **יצירת קוד QR** | לחיצה ימנית על הדף > **Create QR Code** | מאפשר למישהו אחר לסרוק מהמסך שלך את הכתבה עם הטלפון שלו. | 
-| **שיתוף דרך התפריט** | `Alt` + `E` > ניווט ל-"Share" | הדרך ה"מקלדתית" היחידה להגיע לתפריט השיתוף ללא עכבר. | 
+    <div class="max-w-7xl mx-auto">
+        <header class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-slate-800 pb-10 gap-8">
+            <div class="text-right">
+                <h1 class="text-5xl md:text-6xl font-black text-white">המקלדת <span class="text-sky-500">החכמה</span></h1>
+                <p class="text-slate-400 text-xl mt-4">מדריך לפתרון בעיות שיתוף בכרום - מעודכן לדצמבר 2025. עבור יעל המדענית 🧬</p>
+            </div>
+            <div class="bg-slate-900/80 p-6 rounded-3xl border border-slate-700 shadow-2xl">
+                <p class="text-slate-300 font-bold mb-1">📱 מותאם ל-Samsung S25 Ultra</p>
+                <p class="text-slate-500 text-sm italic">מקור: Google Chrome UI Update 2025</p>
+            </div>
+        </header>
 
-### שיתוף ישיר של קבצים (Windows 11)
+        <div class="w-full">
+            <table class="shortcuts-table">
+                <thead class="bg-slate-900 text-slate-400">
+                    <tr>
+                        <th class="px-8 py-6 text-right">פעולה / יכולת</th>
+                        <th class="px-8 py-6 text-right">איך מוצאים ב-2025?</th>
+                        <th class="px-8 py-6 text-right hidden md:table-cell">הסבר מפורט למשתמש</th>
+                    </tr>
+                </thead>
+                <tbody id="mainList">
+                    <!-- Loaded via JS -->
+                </tbody>
+            </table>
+        </div>
 
-במחשב, שיתוף "ישיר" של קובץ (כמו תמונה או מסמך) מתבצע דרך תפריט השיתוף של המערכת:
+        <footer class="mt-20 p-8 border-t border-slate-800 text-slate-500 text-sm flex justify-between items-center">
+            <p>YAEL SCIENTIST 🧬 | נבדק ואומת דצמבר 2025</p>
+            <div class="flex gap-4">
+                <a href="https://support.google.com/chrome/answer/10714216" target="_blank" class="hover:text-sky-400 text-xs">עזרה רשמית - שיתוף בכרום</a>
+            </div>
+        </footer>
+    </div>
 
-| יעד השיתוף | דרך ביצוע | הערה | 
- | ----- | ----- | ----- | 
-| **שיתוף קובץ מסייר הקבצים** | בחר קובץ ואז לחץ על אייקון השיתוף (מלבן עם חץ למעלה) | נפתח תפריט הדומה מאוד לזה של ה-S25 Ultra. | 
-| **שיתוף בקרבת מקום (Nearby)** | הפעל בהגדרות (`Win` + `I`) > מערכת > שיתוף בקרבת מקום | מאפשר לשלוח קבצים ישירות למחשבים אחרים בחדר (דומה ל-Quick Share). | 
+    <script>
+        const shortcuts = [
+            { 
+                icon: "🔍", 
+                action: "מציאת כפתור השיתוף", 
+                keys: ["תפריט ⋮", ">", "שתף"], 
+                desc: "אם אין לך אייקון חץ ליד הכוכב: לחץ על 3 הנקודות בפינה, חפש 'שתף' (Share) או 'שמירה ושיתוף'. שם נמצא מרכז השיתוף החדש." 
+            },
+            { 
+                icon: "🖥️", 
+                action: "פתיחת שיתוף Windows", 
+                keys: ["Share", ">", "עוד"], 
+                desc: "בתוך תפריט השיתוף של כרום, לחץ על 'עוד' (More) עם אייקון של 4 ריבועים כדי לפתוח את חלון השיתוף המערכתי של המחשב." 
+            },
+            { 
+                icon: "📲", 
+                action: "שליחה מהירה ל-S25 Ultra", 
+                keys: ["קליק ימני", ">", "שלח"], 
+                desc: "הדרך הכי מהירה: פשוט קליק ימני על כל מקום בדף ובחירה ב-'Send to your devices'. זה תמיד עובד, גם אם התפריטים השתנו." 
+            },
+            { 
+                icon: "📋", 
+                action: "העתקת כתובת (URL)", 
+                keys: ["Ctrl", "L", "+", "Ctrl", "C"], 
+                desc: "השיטה המדעית הבטוחה: מסמנים את שורת הכתובת ומעתיקים. לא תלוי באף עדכון גרסה של גוגל." 
+            },
+            { 
+                icon: "🕰️", 
+                action: "היסטוריית העתקות", 
+                keys: ["Win", "V"], 
+                desc: "אם העתקת קישור ושכחת להדביק, לחץ כאן כדי לראות את כל הדברים האחרונים ששיתפת." 
+            }
+        ];
 
-**מקורות:**
-1. [Microsoft Support - Windows Shortcuts](https://support.microsoft.com/he-il/windows)
-2. [Google Chrome Help - Share Pages](https://support.google.com/chrome/answer/10714216)
-3. [GitHub Docs - Creating new files](https://docs.github.com/en/repositories/working-with-files/managing-files/creating-new-files)
+        const container = document.getElementById('mainList');
+
+        function renderRows() {
+            container.innerHTML = '';
+            shortcuts.forEach(s => {
+                const tr = document.createElement('tr');
+                const keysHtml = s.keys.map(k => k === "+" ? `<span class="text-slate-600 font-bold mx-1">+</span>` : `<span class="kbd">${k}</span>`).join('');
+                
+                tr.innerHTML = `
+                    <td>
+                        <span class="mobile-label">פעולה</span>
+                        <div class="flex items-center gap-4 text-white">
+                            <span class="text-3xl">${s.icon}</span>
+                            <span class="text-lg font-bold">${s.action}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="mobile-label">איך מבצעים?</span>
+                        <div class="flex items-center gap-1 justify-end md:justify-start flex-wrap">${keysHtml}</div>
+                    </td>
+                    <td class="hidden md:table-cell">
+                        <span class="mobile-label">הסבר</span>
+                        <p class="text-slate-400 text-sm">${s.desc}</p>
+                    </td>
+                `;
+                container.appendChild(tr);
+            });
+        }
+
+        renderRows();
+    </script>
+</body>
+</html>
